@@ -28,9 +28,6 @@ public class Run {
 		a=sum/remain;
 		if (a>1.5)
 			new_rate(a);
-//		System.out.println(rate);
-//		System.out.println(remain);
-//		System.out.println(sum);
 	}
 	
 	public void demonds(double willing) {
@@ -40,7 +37,7 @@ public class Run {
 		int[] operationTime= new int[numOfPeo];
 		int threshold= rand.nextInt(5);
 		for (int i = 0; i < operationTime.length; i++) {
-			money[i]=(rand.nextInt(100))*100;
+			money[i]=(rand.nextInt(100))*((int)total/10000);
 			operationTime[i]=(int) Math.abs( (Math.sqrt(5)*rand.nextGaussian()+5));
 			if (operationTime[i]< threshold){
 				if (remain>money[i]){
@@ -48,6 +45,7 @@ public class Run {
 				remain-=money[i];
 				returnValue+=money[i]*(1+rate);}
 				else{
+					paid=total;
 					returnValue+=remain*(1+rate);
 					remain=0;
 				}

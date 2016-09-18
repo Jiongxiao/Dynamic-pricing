@@ -1,5 +1,6 @@
 import java.util.Random;
 
+
 //total: the original total number of the product
 //original_rate: the original rate
 //rate: the real-time rate
@@ -27,8 +28,11 @@ public class Run {
 		demonds(willing);
 		a=sum/remain;
 		if (a>1.5)
-			new_rate(a);
+			rate_Down(a);
+		if (a<0.1)
+			rate_Up(a);
 	}
+		
 	
 	public void demonds(double willing) {
 		sum=0;
@@ -54,11 +58,22 @@ public class Run {
 		}
 	}
 	
-	public void new_rate(double a) {
+	public void rate_Down(double a) {
 		if (this.rate>0.8*original_rate){
 			this.rate=this.rate*(1-0.2*sigmoid((a-4)/2));
 			this.willing=this.rate/original_rate;   //when the rate declines, people's willing will also decline
 		}
+	}
+	
+	public void rate_Up(double a) {   //when the demand decline too much, the rate should rise a little
+		 double up_rate;	
+		 up_rate=rate*(1+(0.1-0.9*a));
+		 if (up_rate<original_rate){
+				this.rate=up_rate;
+				this.willing=this.rate/original_rate;
+			
+		}
+		
 	}
 	
 	public double sigmoid(double x) {

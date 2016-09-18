@@ -31,8 +31,9 @@ public class multi_thread extends AppCompatActivity {
 
     private double remainvalue=0;
 
-    DecimalFormat df   = new DecimalFormat("######0.000");
+    DecimalFormat df   = new DecimalFormat("######0.00");
     DecimalFormat df1   = new DecimalFormat("######0.0");
+    DecimalFormat dfRate   = new DecimalFormat("######0.0000");
     Run test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,8 @@ public class multi_thread extends AppCompatActivity {
                         SimpleDateFormat dateFormat=new SimpleDateFormat("HH");
                         String time1=dateFormat.format(now);
                         et1.setText(String.valueOf(df.format((test.paid/test.total)*100)+"%"));
-                        et2.setText(String.valueOf(df.format(test.rate)));
+                       Double Prate=test.rate*100;
+                        et2.setText(String.valueOf((dfRate.format(Prate)))+"%");
                         et3.setText(String.valueOf(time1)+":"+String.valueOf(minute));
                         et4.setText(String.valueOf(df1.format(test.sum)));
                         et5.setText(String.valueOf(test.remain));

@@ -17,7 +17,7 @@
         android:text="Sum:"
         android:textStyle="bold"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="130dp"
         android:textSize="30dp"
         />
     <EditText
@@ -51,7 +51,8 @@
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="20dp"
         android:text="Sumbit"
         android:onClick="second"
 

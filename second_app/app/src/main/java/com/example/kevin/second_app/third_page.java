@@ -17,7 +17,7 @@ public class third_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third_page);
-        DecimalFormat df   = new DecimalFormat("######0.000");
+        DecimalFormat df   = new DecimalFormat("######0.00");
        bundle2=this.getIntent().getExtras();
         String sum=bundle2.getString("SUM");
         String rate=bundle2.getString("RATE");

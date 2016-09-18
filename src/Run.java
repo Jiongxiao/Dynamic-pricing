@@ -26,7 +26,7 @@ public class Run {
 	
 	public void buyer(){
 		demonds(willing);
-		a=sum/remain;
+		a=sum/remain;  //a measures the supply-demand relationship
 		if (a>1.5)
 			rate_Down(a);
 		if (a<0.1)

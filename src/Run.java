@@ -59,8 +59,10 @@ public class Run {
 	}
 	
 	public void rate_Down(double a) {
-		if (this.rate>0.8*original_rate){
-			this.rate=this.rate*(1-0.2*sigmoid((a-4)/2));
+		double down_rate;
+		down_rate=rate*(1-0.2*sigmoid((a-4)/2));
+		if (down_rate>0.8*original_rate){
+			this.rate=down_rate;
 			this.willing=this.rate/original_rate;   //when the rate declines, people's willing will also decline
 		}
 	}

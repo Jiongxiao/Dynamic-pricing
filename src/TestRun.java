@@ -3,7 +3,7 @@ public class TestRun {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		Run test=new Run(1000000, 0.06);
+		Run test=new Run(3000000, 0.06);
 		while(test.remain>0){
 			test.buyer();
 			System.out.println(test.rate);
@@ -12,9 +12,7 @@ public class TestRun {
 			Thread.sleep(1000);
 		}
 		System.err.println(test.returnValue);
-
-		
-
+	
 	}
 
 }
